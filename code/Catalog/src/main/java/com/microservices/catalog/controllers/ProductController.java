@@ -8,14 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@RequestMapping("/api/products")
+@RequestMapping("/api/products")
 public class ProductController {
-
-    //List products: /api/products
-    //Get product by Id: /api/products/{id}
-    //Search by category: /api/products/category/{category}
-    //Create product: POST /api/products
-    //Change availability: PUT /api/products/{id}/availability/{value}
 
     private final ProductService productService;
 
@@ -29,7 +23,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Product> getProductById(@PathVariable String id) {
+    public Optional<Product> getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
 
@@ -49,9 +43,8 @@ public class ProductController {
     }
 
     @PutMapping("/{id}/availability/{value}")
-    public Product updateAvailability(@PathVariable String id,
+    public Product updateAvailability(@PathVariable Long id,
                                       @PathVariable Integer value) {
         return productService.updateAvailability(id, value);
     }
-
 }

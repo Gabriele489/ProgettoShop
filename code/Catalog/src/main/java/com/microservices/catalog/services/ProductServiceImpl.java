@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Optional<Product> getProductById(String id) {
+    public Optional<Product> getProductById(Long id) {
         return productRepository.findById(id);
     }
 
@@ -43,12 +43,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product updateAvailability(String id, Integer availability) {
+    public Product updateAvailability(Long id, Integer availability) {
         return productRepository.findById(id).map(product -> {
             product.setAvailability(availability);
             return productRepository.save(product);
         }).orElseThrow(
-                () -> new RuntimeException(  "product not found with id " + id));
-
+                () -> new RuntimeException("product not found with id " + id));
     }
 }

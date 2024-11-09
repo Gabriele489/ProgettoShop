@@ -2,6 +2,7 @@ package com.microservices.order.controllers;
 
 import com.microservices.order.models.Order;
 import com.microservices.order.models.dto.OrderRequest;
+import com.microservices.order.services.OrderServiceImpl;
 import com.microservices.order.services.interfaces.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -20,9 +21,9 @@ public class OrderController {
     DiscoveryClient discoveryClient;
 
 
-    private final OrderService orderService;
+    private final OrderServiceImpl orderService;
 
-    public OrderController(OrderService orderService) {
+    public OrderController(OrderServiceImpl orderService) {
         this.orderService = orderService;
     }
 

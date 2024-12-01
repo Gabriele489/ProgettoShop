@@ -1,0 +1,13 @@
+package com.shop.shop_rating;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ShopRatingApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ShopRatingApplication.class, args);
+	}
+
+}

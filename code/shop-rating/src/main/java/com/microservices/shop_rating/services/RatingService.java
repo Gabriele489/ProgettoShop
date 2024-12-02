@@ -1,12 +1,16 @@
-package main.java.com.microservices.shop_rating.services;
+package com.microservices.shop_rating.services;
 
-import com.example.shoprating.model.Rating;
-import com.example.shoprating.repository.RatingRepository;
+import com.microservices.shop_rating.models.ProductRating;
+import com.microservices.shop_rating.repositories.RatingRepository;
+import com.microservices.shop_rating.models.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class RatingService {

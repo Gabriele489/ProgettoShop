@@ -1,4 +1,4 @@
-package com.shop.shop_rating;
+package com.microservices.shop_rating;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

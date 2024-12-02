@@ -1,4 +1,4 @@
-package main.java.com.microservices.shop_rating.models;
+package com.microservices.shop_rating.models;
 
 import javax.persistence.*;
 

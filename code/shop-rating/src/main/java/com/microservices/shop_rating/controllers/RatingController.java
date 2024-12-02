@@ -1,9 +1,12 @@
-package main.java.com.microservices.shop_rating.controllers;
+package com.microservices.shop_rating.controllers;
 
-import com.example.shoprating.model.Rating;
-import com.example.shoprating.service.RatingService;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
+import com.microservices.shop_rating.services.RatingService;
 import org.springframework.data.domain.Pageable;
+import com.microservices.shop_rating.models.Rating;
+import com.microservices.shop_rating.models.ProductRating;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

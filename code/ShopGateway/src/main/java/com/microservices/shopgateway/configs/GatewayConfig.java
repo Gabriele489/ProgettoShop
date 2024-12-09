@@ -21,6 +21,10 @@ public class GatewayConfig {
                 .route("order", r -> r.path("/purchases/**")
                         .filters(f -> f.stripPrefix(1))
                         .uri("lb://order"))
+
+                .route("shoprating", r -> r.path("/ratings/**")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("lb://shoprating"))
                 .build();
     }
 }

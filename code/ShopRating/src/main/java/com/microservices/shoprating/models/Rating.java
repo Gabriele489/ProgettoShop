@@ -18,4 +18,15 @@ public class Rating {
     private String userId;
     private Integer rating;
     private String comment;
+
+    @Override
+    public String toString() {
+        return "Rating{" +
+                "id=" + id +
+                ", productId='" + productId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", rating=" + rating +
+                ", comment='" + comment + '\'' +
+                '}';
+    }
 }

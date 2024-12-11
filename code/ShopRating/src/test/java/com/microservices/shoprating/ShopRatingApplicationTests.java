@@ -26,6 +26,7 @@ public class ShopRatingApplicationTests {
     @Test
     public void testAddOrUpdateRating() {
         Rating rating = ratingService.addOrUpdateRating("1L", "1L", 5, "Great product!");
+        System.out.println("Rating: " + rating);
         assertNotNull(rating);
         assertEquals(5, rating.getRating());
         assertEquals("Great product!", rating.getComment());
@@ -34,14 +35,18 @@ public class ShopRatingApplicationTests {
     @Test
     public void testGetRatingsByProductId() {
         Page<Rating> ratings = ratingService.getRatingsByProductId("1L", PageRequest.of(0, 10));
+        System.out.println("Ratings: " + ratings.getContent());
         assertNotNull(ratings);
         assertTrue(ratings.getTotalElements() > 0);
     }
 
     @Test
-    @Disabled
     public void testGetPopularProducts() {
         List<Object[]> popularProducts = ratingService.getPopularProducts(PageRequest.of(0, 10));
+        System.out.println("Popular Products:");
+        for (Object[] product : popularProducts) {
+            System.out.println("Product ID: " + product[0] + ", Average Rating: " + product[1]);
+        }
         assertNotNull(popularProducts);
         assertTrue(popularProducts.size() > 0);
     }
